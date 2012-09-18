@@ -8,22 +8,33 @@
 }
 
 // hide text from current element
-@mixin hide-text {
+@mixin hide-text () {
   text-indent: -100%;
   white-space: nowrap;
   overflow: hidden;
-  display:inline-block;
-  color:transparent !important;
-  min-width:10px;
+  display: inline-block;
+  color: transparent !important;
 }
 
-// connvert current element to horizontal list
-@mixin horizontal-list {
+// convert current element to horizontal list
+@mixin horizontal-list () {
   display:block;
   list-style:none;
   li {
     display:inline-block;
     margin:0;
     padding:0;
+  }
+}
+
+// clear floats
+@mixin clearfix() {
+  zoom: 1;
+  &:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: ".";
   }
 }
