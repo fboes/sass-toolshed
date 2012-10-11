@@ -12,19 +12,8 @@
   text-indent: -100%;
   white-space: nowrap;
   overflow: hidden;
-  display: inline-block;
+  display: inline-block; // compass: @include inline-block();
   color: transparent !important;
-}
-
-// convert current element to horizontal list
-@mixin horizontal-list () {
-  display:block;
-  list-style:none;
-  li {
-    display:inline-block;
-    margin:0;
-    padding:0;
-  }
 }
 
 // clear floats
@@ -36,5 +25,22 @@
     height: 0;
     clear: both;
     content: ".";
+  }
+}
+
+// convert current element to horizontal list
+@mixin horizontal-list ($noSpaces : true) {
+  display:block;
+  list-style:none;
+  @if $noSpaces {
+    @include clearfix();
+  }
+  li {
+    display:inline-block; // compass: @include inline-block();
+    margin:0;
+    padding:0;
+    @if $noSpaces {
+      float:left;
+    }
   }
 }
