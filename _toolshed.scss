@@ -1,46 +1,55 @@
 // build webfont source
 @mixin webfont-src ($base, $id) {
-  src: url('#{$base}.eot');
-  src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
-       url('#{$base}.woff') format('woff'),
-       url('#{$base}.svg##{$id}') format('svg'),
-       url('#{$base}.ttf') format('truetype');
+	src: url('#{$base}.eot');
+	src: url('#{$base}.eot?#iefix') format('embedded-opentype'),
+		url('#{$base}.woff') format('woff'),
+		url('#{$base}.svg##{$id}') format('svg'),
+		url('#{$base}.ttf') format('truetype');
 }
 
 // hide text from current element
 @mixin hide-text () {
-  text-indent: -100%;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block; // compass: @include inline-block();
-  color: transparent !important;
+	text-indent: -100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	color: transparent !important;
 }
 
 // clear floats
-@mixin clearfix() {
-  zoom: 1;
-  &:after {
-    display: block;
-    visibility: hidden;
-    height: 0;
-    clear: both;
-    content: ".";
-  }
+@mixin clearfix () {
+	zoom: 1;
+	&:after {
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
+		content: ".";
+	}
+}
+
+// add automatic hyphens (set lang=".." on parent element)
+@mixin hyphenate () {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
 }
 
 // convert current element to horizontal list
 @mixin horizontal-list ($noSpaces : true) {
-  display:block;
-  list-style:none;
-  @if $noSpaces {
-    @include clearfix();
-  }
-  li {
-    display:inline-block; // compass: @include inline-block();
-    margin:0;
-    padding:0;
-    @if $noSpaces {
-      float:left;
-    }
-  }
+	display:block;
+	list-style:none;
+	@if $noSpaces {
+		@include clearfix();
+	}
+	li {
+		display:inline-block; // compass: @include inline-block();
+		margin:0;
+		padding:0;
+		@if $noSpaces {
+			float:left;
+		}
+	}
 }
