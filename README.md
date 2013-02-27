@@ -1,7 +1,7 @@
 SASS-Toolshed
 =============
 
-Everyday mixins for SASS.
+Everyday mixins for SASS. Use `@import 'toolshed'` to use.
 
 You may also want to use Compass (http://compass-style.org/).
 

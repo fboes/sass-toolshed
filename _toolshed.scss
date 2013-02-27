@@ -30,11 +30,11 @@
 
 // add automatic hyphens (set lang=".." on parent element)
 @mixin hyphenate () {
+	     -o-hyphens: auto;
+	    -ms-hyphens: auto;
+	   -moz-hyphens: auto;
 	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
+	        hyphens: auto;
 }
 
 // convert current element to horizontal list
@@ -75,5 +75,28 @@
 	margin: -1px;
 	border: 0;
 	clip: rect(0 0 0 0);
-	overflow: hidden;    
+	overflow: hidden;
+}
+
+@mixin animation ($name, $duration, $timing-function:'ease', $delay:0, $iteration-count:1, $direction:'normal') {
+	     -o-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	    -ms-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	   -moz-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	-webkit-animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+	        animation: #{$name} #{$duration} #{$timing-function} #{$delay} #{$iteration-count} #{$direction};
+}
+
+@mixin keyframes ($name) {
+	@-o-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
 }
