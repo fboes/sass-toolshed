@@ -54,7 +54,7 @@
 	}
 }
 
-/* on retina, use image that's scaled by 2 */
+// on retina, use image that's scaled by 2
 @mixin background-retina($originalBackground, $retinaBackground, $width, $height) {
   background-image: url($originalBackground);
   @media (min--moz-device-pixel-ratio: 1.3),
@@ -69,8 +69,8 @@
 
 @mixin visuallyhidden () {
 	position: absolute;
-	width: 1px; /* Setting this to 0 make it invisible for VoiceOver */
-	height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+	width: 1px; // Setting this to 0 make it invisible for VoiceOver
+	height: 1px; // Setting this to 0 make it invisible for VoiceOver
 	padding: 0;
 	margin: -1px;
 	border: 0;
