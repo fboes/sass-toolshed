@@ -1,13 +1,11 @@
 * {
-	margin:0;padding:0;
+	margin:0;
+	padding:0;
 }
 section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
 	display:block;
 }
 
-body  {
-	padding:0;
-}
 h1,h2,h3,h4,p,dl,ul,li {
 	margin-bottom:1em;
 }
@@ -40,6 +38,9 @@ a {
 	& img {
 		border:none;
 	}
+}
+img, video, audio {
+	max-width:100%;
 }
 button {
 	cursor:pointer;
