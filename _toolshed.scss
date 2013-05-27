@@ -100,3 +100,7 @@
 		@content;
 	}
 }
+
+@function toolshed-rem ($value-px, $base-px, $relative : 0) {
+	@return #{($value-px / $base-px) + $relative}rem;
+}
