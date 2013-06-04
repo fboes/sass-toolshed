@@ -6,11 +6,8 @@ section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,h
 	display:block;
 }
 
-h1,h2,h3,h4,p,dl,ul,li {
+h1,h2,h3,h4,p,dl,ul {
 	margin-bottom:1em;
-}
-h1, h2, h3, h4 {
-	clear:both;
 }
 h1 {
 	font-size:3em;
@@ -46,12 +43,14 @@ button {
 	cursor:pointer;
 }
 
-form,input,button	{
+form,input,button {
 	font-size:1em;
 }
 
 table {
 	font-size: 1em;
+	border-collapse: collapse;
+	border-spacing: 0;
 	td, th {
 		font-size: 1em;
 		vertical-align:top;
@@ -61,7 +60,7 @@ table {
 
 // Special classes
 
-.block	{
+.display-block	{
 	display:block;
 	width:99%;
 }
