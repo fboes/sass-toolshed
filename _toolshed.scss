@@ -101,6 +101,16 @@
 	}
 }
 
+// @see http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
+@mixin absolute-center ($width : 50%, $height : 50%) {
+	width: $width;
+	height: $height;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
