@@ -16,3 +16,13 @@
 	background-image: url($retinaImageUrl);
 	background-size: (image-width($retinaImageUrl)/$factor) (image-height($retinaImageUrl)/$factor);
 }
+
+// Build a nice circular element
+@mixin circle-compass ($diameter, $paddingTop, $paddingRight, $paddingBottom, $paddingLeft) {
+	padding: $paddingTop $paddingRight $paddingBottom $paddingLeft;
+	@include border-radius($diameter);
+	height: $diameter - $borderTop - $borderBottom;
+	min-width: $diameter - $borderLeft - $borderRight;
+	text-align:center;
+}
+
