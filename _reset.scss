@@ -31,16 +31,6 @@ dt {
 dl {
 	margin-left:1em;
 }
-h1, h2, h3, h4, p, li, dt, dd, td, th {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
-}
-code, pre, abbr, acronym {
-	hyphens: none;
-}
 a {
 	& img {
 		border:none;
