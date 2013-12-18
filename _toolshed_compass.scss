@@ -21,8 +21,8 @@
 @mixin circle-compass ($diameter, $paddingTop, $paddingRight, $paddingBottom, $paddingLeft) {
 	padding: $paddingTop $paddingRight $paddingBottom $paddingLeft;
 	@include border-radius($diameter);
-	height: $diameter - $borderTop - $borderBottom;
-	min-width: $diameter - $borderLeft - $borderRight;
+	height: $diameter - $paddingTop - $paddingBottom;
+	min-width: $diameter - $paddingLeft - $paddingRight;
 	text-align:center;
 }
 
