@@ -18,11 +18,11 @@
 }
 
 // Build a nice circular element
-@mixin circle-compass ($diameter, $paddingTop : 0px, $paddingRight : 0px, $paddingBottom : 0px, $paddingLeft : 0px) {
-	padding: $paddingTop $paddingRight $paddingBottom $paddingLeft;
+@mixin circle-compass ($diameter, $paddingTop : 0px, $paddingSide : 0px, $paddingBottom : 0px) {
+	padding: $paddingTop $paddingSide $paddingBottom;
 	@include border-radius($diameter);
-	height: $diameter - $paddingTop - $paddingBottom;
-	min-width: $diameter - $paddingLeft - $paddingRight;
+	min-height: $diameter - $paddingTop - $paddingBottom;
+	min-width: $diameter - (2 * $paddingSide);
 	text-align:center;
 }
 
