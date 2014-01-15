@@ -1,13 +1,13 @@
 // on retina, use image that's scaled by 2
 @mixin background-retina-compass ($imageUrl, $retinaImageUrl) {
 	background-image: url($imageUrl);
-	background-size: image-width($imageUrl) image-height($imageUrl);
 	@media (min--moz-device-pixel-ratio: 1.3),
 	(-o-min-device-pixel-ratio: 2.6/2),
 	(-webkit-min-device-pixel-ratio: 1.3),
 	(min-device-pixel-ratio: 1.3),
 	(min-resolution: 1.3dppx) {
 		background-image: url($retinaImageUrl);
+		background-size: image-width($imageUrl) image-height($imageUrl);
 	}
 }
 
@@ -21,8 +21,8 @@
 @mixin circle-compass ($diameter, $paddingTop : 0px, $paddingSide : 0px, $paddingBottom : 0px, $enforceSize : false) {
 	padding: $paddingTop $paddingSide $paddingBottom;
 	@include border-radius($diameter);
-	$realHeight: $diameter - $paddingTop - $paddingBottom;
-	$realWidth: $diameter - (2 * $paddingSide);
+	$realHeight: max(0,$diameter - $paddingTop - $paddingBottom);
+	$realWidth:  max(0,$diameter - (2 * $paddingSide));
 	@if $enforceSize {
 		height: $realHeight;
 		width: $realWidth;
