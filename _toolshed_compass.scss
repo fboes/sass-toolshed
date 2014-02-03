@@ -21,14 +21,13 @@
 @mixin circle-compass ($diameter, $paddingTop : 0px, $paddingSide : 0px, $paddingBottom : 0px, $enforceSize : false) {
 	padding: $paddingTop $paddingSide $paddingBottom;
 	@include border-radius($diameter);
-	$realHeight: max(0,$diameter - $paddingTop - $paddingBottom);
-	$realWidth:  max(0,$diameter - (2 * $paddingSide));
+	@include box-sizing(border-box);
 	@if $enforceSize {
-		height: $realHeight;
-		width: $realWidth;
+		height: $diameter;
+		width: $diameter;
 	} @else {
-		min-height: $realHeight;
-		min-width: $realWidth;
+		min-height: $diameter;
+		min-width: $diameter;
 	}
 	text-align:center;
 }
