@@ -3,6 +3,10 @@
 * {
 	margin:0;
 	padding:0;
+	// see http://css-tricks.com/international-box-sizing-awareness-day/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
 	display:block;
