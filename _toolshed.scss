@@ -111,6 +111,23 @@
 	top: 0; left: 0; bottom: 0; right: 0;
 }
 
+// This mixin allows you to get a specific icon from a grid-sprite.
+// Combine this mixing with @mixin background-retina to a new mixing for your sprite
+// * $xGrid: The x-spacing from the center of each ion to the next, e.g. "20px"
+// * $yGrid: The y-spacing from the center of each ion to the next, e.g. "20px"
+// * $xOffset: The x-position of the icon on this grid
+// * $yOffset: The y-position of the icon on this grid
+// * $width: The width of ths icon in px
+// * $height: The height of ths icon in px
+@mixin grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $width : 20px, $height : 20px) {
+	background-repeat:no-repeat;
+	display:inline-block;
+	width:ceil($width);
+	height:ceil($height);
+	background-position: floor(-1 * $xGrid * ($xoffset + 0.5) + ($width / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($height / 2));
+}
+
+
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
