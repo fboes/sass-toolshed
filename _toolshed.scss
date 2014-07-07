@@ -124,7 +124,7 @@
 	display:inline-block;
 	width:ceil($width);
 	height:ceil($height);
-	background-position: floor(-1 * $xGrid * ($xoffset + 0.5) + ($width / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($height / 2));
+	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($width / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($height / 2));
 }
 
 @mixin table-fixed {
