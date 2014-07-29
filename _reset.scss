@@ -10,7 +10,18 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-section,header,footer,nav,main,article,aside,figure,dialog,video,audio,address,hgroup,menu,canvas,details {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
 	display:block;
 }
 h1,h2,h3,h4,p,dl,ul {
@@ -53,6 +64,9 @@ button {
 }
 form, input, select, textarea, button {
 	font: inherit;
+}
+textarea {
+	overflow: auto;
 }
 [hidden] {
 	display: none;
