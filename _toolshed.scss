@@ -119,11 +119,24 @@
 // * $yOffset: The y-position of the icon on this grid
 // * $width: The width of ths icon in px
 // * $height: The height of ths icon in px
-@mixin grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $width : 20px, $height : 20px) {
+// * $compact: Set to true to remove additional clutter
+@mixin grid-sprite ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $width : 20px, $height : 20px, $compact : false) {
+	@if $compact {
+	}
+	@else {
+		@include grid-sprite-stuff ($width, $height);
+	}
+	@include grid-sprite-position($xGrid, $yGrid, $xOffset, $yOffset, $width, $height);
+}
+
+@mixin grid-sprite-stuff ($width : 20px, $height : 20px) {
 	background-repeat:no-repeat;
 	display:inline-block;
 	width:ceil($width);
 	height:ceil($height);
+}
+
+@mixin grid-sprite-position ($xGrid, $yGrid, $xOffset : 0, $yOffset : 0, $width : 20px, $height : 20px) {
 	background-position: floor(-1 * $xGrid * ($xOffset + 0.5) + ($width / 2) ) floor(-1 * $yGrid * ($yOffset + 0.5) + ($height / 2));
 }
 
@@ -138,6 +151,7 @@
 	}
 }
 
+// Convert pixels to rem
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
