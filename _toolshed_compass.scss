@@ -1,11 +1,11 @@
 // Downscale images, i.e. for retina images
-@mixin background-scaled-compass ($retinaImageUrl, $factor: 2) {
+@mixin toolshed-background-scaled-compass ($retinaImageUrl, $factor: 2) {
 	background-image: url($retinaImageUrl);
 	background-size: (image-width($retinaImageUrl)/$factor) (image-height($retinaImageUrl)/$factor);
 }
 
 // on retina, use image that's scaled by 2
-@mixin background-retina-compass ($imageUrl, $retinaImageUrl2, $retinaImageUrl3 : '') {
+@mixin toolshed-background-retina-compass ($imageUrl, $retinaImageUrl2, $retinaImageUrl3 : '') {
 	@if ($imageUrl != '') {
 		background-image: url($imageUrl);
 		background-size: image-width($imageUrl) image-height($imageUrl);
@@ -37,7 +37,7 @@
 }
 
 // Build a nice circular element
-@mixin circle-compass ($diameter, $paddingTop : 0px, $paddingSide : 0px, $paddingBottom : 0px, $enforceSize : false) {
+@mixin toolshed-circle-compass ($diameter, $paddingTop : 0px, $paddingSide : 0px, $paddingBottom : 0px, $enforceSize : false) {
 	padding: $paddingTop $paddingSide $paddingBottom;
 	@include border-radius($diameter);
 	@include box-sizing(border-box);
