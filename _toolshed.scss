@@ -42,7 +42,7 @@
 	display:block;
 	list-style:none;
 	@if $noSpaces {
-		@include clearfix();
+		@include toolshed-clearfix();
 	}
 	li {
 		display:inline-block; // compass: @include inline-block();
@@ -124,9 +124,9 @@
 	@if $compact {
 	}
 	@else {
-		@include grid-sprite-stuff ($width, $height);
+		@include toolshed-grid-sprite-stuff ($width, $height);
 	}
-	@include grid-sprite-position($xGrid, $yGrid, $xOffset, $yOffset, $width, $height);
+	@include toolshed-grid-sprite-position($xGrid, $yGrid, $xOffset, $yOffset, $width, $height);
 }
 
 @mixin toolshed-grid-sprite-stuff ($width : 20px, $height : 20px) {

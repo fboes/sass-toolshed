@@ -10,9 +10,9 @@
 		background-image: url($imageUrl);
 		background-size: image-width($imageUrl) image-height($imageUrl);
 	} @elseif ($retinaImageUrl2 != '') {
-		@include background-scaled-compass ($retinaImageUrl2, 2);
+		@include toolshed-background-scaled-compass ($retinaImageUrl2, 2);
 	} @else {
-		@include background-scaled-compass ($retinaImageUrl3, 3);
+		@include toolshed-background-scaled-compass ($retinaImageUrl3, 3);
 	}
 	@if ($retinaImageUrl2 != '' and $imageUrl != '') {
 		@media (min--moz-device-pixel-ratio: 1.3),
