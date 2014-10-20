@@ -50,6 +50,9 @@
 		padding:0;
 		@if $noSpaces {
 			float:left;
+			[dir="rtl"] & {
+				float:right;
+			}
 		}
 	}
 }
