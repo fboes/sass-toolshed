@@ -154,6 +154,19 @@
 	}
 }
 
+@mixin toolshed-horizontal-center ($useFlex: true) {
+	@if ($useFlex) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@else {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 // Convert pixels to rem
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
