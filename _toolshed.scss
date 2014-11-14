@@ -154,7 +154,7 @@
 	}
 }
 
-@mixin toolshed-horizontal-center ($useFlex: true) {
+@mixin toolshed-vertical-center ($useFlex: true) {
 	@if ($useFlex) {
 		display: flex;
 		flex-direction: column;
