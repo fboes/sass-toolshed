@@ -171,3 +171,8 @@
 @function toolshed-rem ($value-px, $base-px, $relative : 0) {
 	@return #{($value-px / $base-px) + $relative}rem;
 }
+
+// round with precision of 3
+@function toolshed-round ($val) {
+	@return round($val * 1000) / 1000;
+}
