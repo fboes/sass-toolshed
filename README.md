@@ -67,10 +67,15 @@ How to work with sprites
 }
 ```
 
+Installation
+------------
+
+Via [Bower](http://bower.io/): `bower install fboes/sass-toolshed`
+
 Version
 -------
 
-Version: 1.2 (2014-07-25)
+Version: 1.2.1 (2014-11-25)
 
 Legal stuff
 -----------

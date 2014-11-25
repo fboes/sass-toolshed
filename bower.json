@@ -1,0 +1,21 @@
+{
+  "name": "sass-toolshed",
+  "version": "1.2.1",
+  "homepage": "https://github.com/fboes/sass-toolshed",
+  "authors": [
+    "Frank Boës <http://3960.org>"
+  ],
+  "description": "Everyday mixins for SASS. Use `@import 'toolshed'` to use.",
+  "main": "_toolshed.scss",
+  "keywords": [
+    "SASS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
