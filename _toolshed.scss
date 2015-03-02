@@ -49,6 +49,9 @@
 				float:right;
 			}
 		}
+		@else {
+			vertical-align: top;
+		}
 	}
 }
 
@@ -99,12 +102,18 @@
 // * $iconHeight     (unit)    The height of this icon in px
 // * $xOffset        (integer) The x-position of the icon on this grid
 // * $yOffset        (integer) The y-position of the icon on this grid
-// * $mode           (integer)  with 0 => all css, 1 => all css without bg-image, 2 => only background-position
+// * $mode           (integer) with 0 => all css, 1 => all css without bg-image, 2 => only background-position, 3 => only size
 @mixin toolshed-grid-sprite-complete ($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight, $xGrid, $yGrid, $iconWidth, $iconHeight, $xOffset : 0, $yOffset : 0, $mode: 0) {
 	@if ($mode == 0) {
 		@include toolshed-background-retina($imageUrl, $retinaImageUrl, $imageWidth, $imageHeight);
 	}
-	@include toolshed-grid-sprite($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight, ($mode == 3));
+	@if ($mode == 3) {
+		width:ceil($iconWidth);
+		height:ceil($iconHeight);
+	}
+	@else {
+		@include toolshed-grid-sprite($xGrid, $yGrid, $xOffset, $yOffset, $iconWidth, $iconHeight, ($mode == 2));
+	}
 }
 
 // generating sprite stuff without bg-image
